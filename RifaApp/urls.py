@@ -1,8 +1,7 @@
 from django.urls import path
 from . import views
 
-
-urlpatterns={
-    # llamar a la funcion inicio en el archivo views.py y donde en esta responde con el archivo base.html
-    path('',views.inicio, name='inicio'),
-}
+urlpatterns = [
+    # Llamar a la función inicio en el archivo views.py y responder con el archivo base.html
+    path('', views.pagina_principal, name='pagina_principal'),
+]

@@ -1,0 +1,63 @@
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header {
+    background-color: #FFD700;
+    width: 100%; /* Ancho*/ 
+    height:210px; /*alto */
+    text-align: center; /* Centra horizontalmente el contenido */
+}
+
+.sections {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+.card {
+    background-color: #F0F0F0;
+    padding: 20px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+}
+.comprar-button {
+    background-color: #FFD700; 
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.dialog {
+    text-align: center;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 400px;
+}
+.dialog input[type="number"] {
+    width: 50px;
+    text-align: center;
+}
+.cart-button {
+    background-color: #FFD700; 
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.jumbotron {
+    background-color: #e9ecef;
+}
+  
+.footer {
+    border-top: 1px solid #ced4da;
+}

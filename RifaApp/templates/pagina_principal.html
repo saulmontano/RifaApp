@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RifaAPP</title>
+    <link  type='text/css' rel='stylesheet' href='{% static "css/pagina_principal.css" %}'>
+</head>
+<body>
+  <div  class="feet-site" id="page">
+    <!-- imagen logo -->
+    <header class="site-header">
+      <div class="site-branding">
+        <span class="site-logo-img">
+          <a href="#" class="curtom-logo-link">
+            <img width="400" height="210" src="static/img/logo.jpg" alt="RifaAPP" class="custom-logo">
+          </a>
+        </span>
+      </div>
+    </header>
+
+    <div class="site-content">
+      <div class="content-area-primary">
+        <main id="main" class="site-main">
+
+          <!-- titulo de la rifa -->
+          <div class="title">
+        
+        
+          </div>
+      
+        
+          <!-- seccion de promociones -->
+          <div class="sections">
+            <!-- se relaiza la toma de los valores desde de la tabla ValoresPorCantidad
+                realizando automaticamente la cantidad de tarjetas requeridas -->
+            {% for valor in valores %}
+            <div class="card">
+              <h2>x{{ valor.cantidad }}</h2>
+              <p>${{ valor.precio }}</p>
+              <p>Pesos colombianos</p>
+              <button class="comprar-button">Comprar</button>
+            </div>
+            {% endfor %}
+          </div>
+        
+        
+          <!-- otras opciones de compra -->
+          <div class="dialog">
+            <input type="number" value="2">
+            <button class="cart-button">Agregar al carrito</button>
+          </div>
+
+
+        </main> 
+      </div>
+    </div>
+  </div>
+  <!-- feet site -->
+
+    
+
+  <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <span class="text-muted">© 2024 Mi Página Web</span>
+      </div>
+  </footer>
+</body>
+</html>
