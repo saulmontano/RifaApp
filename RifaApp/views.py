@@ -4,25 +4,27 @@ from django.http import HttpResponse
 from .models import *# se importan todos los modelos
 
 def pagina_principal(request):
-
-    # Se guardan los valores del modelo ValoresPorCantidad en la variable "valores" y se envias a pagina_principal.html
+    # Se guardan los valores del modelo ValoresPorCantidad en la variable "valores"
     valores = ValoresPorCantidad.objects.all()
+    
+    # Obtener los valores de los campos, con first se optiene el primer dato de la tabla-modelo
+    primera_rifa = Rifa.objects.first()
+    # validacion de que no este vacia, si lo esta enviar nulo
+    titulo = primera_rifa.titulo if primera_rifa else None
+    # validacion de que no este vacia, si lo esta enviar nulo
+    descripcion = primera_rifa.descripcion if primera_rifa else None
 
-    return render(request, 'pagina_principal.html', {'valores': valores})
+    # Obtener la primera imagen de la rifa
+    primera_imagen = ImagenesRifa.objects.first()
+    # Obtener la URL de la imagen desde el modelo 
+    imagen_url = primera_imagen.imagen.url if primera_imagen else None
 
-def vista_multimedia(request):
+    context ={
+        'valores': valores,
+        'titulo':titulo, 
+        'descripcion': descripcion, 
+        'imagen_url': imagen_url,
+        
+    }
 
-    # Se guardan los valores del modelo MultimediaPrincipal en la variable "multimedia_principal" y se envias a pagina_principal.html
-    multimedia_principal = MultimediaPrincipal.objects.all()
-    multimedia_secundaria = MultimediaSecundaria.objects.all()
-
-    # Se iterando sobre los objetos MultimediaSecundaria y separando aquellos que son videos MP4 de los que son imágenes.
-    multimedia_secundaria_con_video = []
-    multimedia_secundaria_con_imagen = []
-
-    for item in multimedia_secundaria:
-        if item.archivo.name.lower().endswith('.mp4'):
-            multimedia_secundaria_con_video.append(item)
-        else:
-            multimedia_secundaria_con_imagen.append(item)
-    return render(request, 'plantilla.html', {'multimedia_principal': multimedia_principal, 'multimedia_secundaria_con_video': multimedia_secundaria_con_video, 'multimedia_secundaria_con_imagen': multimedia_secundaria_con_imagen})
+    return render(request, 'pagina_principal.html', context)

@@ -5,12 +5,86 @@ body {
     padding: 0;
 }
 
-.site-header {
-    background-color: #FFD700;
-    width: 100%; /* Ancho*/ 
-    height:210px; /*alto */
-    text-align: center; /* Centra horizontalmente el contenido */
+/* nav principal */
+.feet-site{
+    background-color: white;
 }
+.site-header {
+    width: 100%; /* Ancho*/ 
+    height:200px; /*alto */
+    display: flex;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(45deg, rgb(12, 10, 129), rgb(53, 52, 131), rgb(12, 12, 12),rgb(216, 212, 212));
+    background-size: 400% 200%;
+    position: relative;
+    animation: cambiar 10s ease infinite;
+}
+@keyframes cambiar {
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+}
+
+
+/* titulo de la rifa */
+.content-tittle{
+    background-color:white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+.elementor-widget-tittle{
+    width: 100%; /* Ancho*/ 
+    height:100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.elementor-heading-tittle{
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.custom-tittle {
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+/* descripcion de la rifa */
+.elementor-widget-descrip{
+    width: 100%; /* Ancho*/ 
+    height:100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.elementor-heading-descrip{
+    width: 90%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.custom-descrip {
+    color: rgba(13, 13, 14, 0.575);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+/* imagen principal */
+.site-branding{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+
 
 .sections {
     background-color: white;
@@ -27,7 +101,7 @@ body {
     flex-shrink: 0;
     scroll-snap-align: center;
 }
-.comprar-button {
+.cart-button {
     background-color: #FFD700; 
     color: #000;
     border: none;
@@ -44,14 +118,6 @@ body {
 .dialog input[type="number"] {
     width: 50px;
     text-align: center;
-}
-.cart-button {
-    background-color: #FFD700; 
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 .jumbotron {

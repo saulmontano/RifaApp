@@ -11,10 +11,10 @@
   <div  class="feet-site" id="page">
     <!-- imagen logo -->
     <header class="site-header">
-      <div class="site-branding">
+      <div class="">
         <span class="site-logo-img">
           <a href="#" class="curtom-logo-link">
-            <img width="400" height="210" src="static/img/logo.jpg" alt="RifaAPP" class="custom-logo">
+            <img width="250" height="210" src="static/img/logo.png" alt="RifaAPP" class="custom-logo">
           </a>
         </span>
       </div>
@@ -22,40 +22,74 @@
 
     <div class="site-content">
       <div class="content-area-primary">
-        <main id="main" class="site-main">
+        <main class="site-main" id="main">
 
           <!-- titulo de la rifa -->
-          <div class="title">
-        
+          {% if titulo %}
+          <div class="content-tittle">
+            <div class="elementor-widget-tittle">
+              <h2 class="elementor-heading-tittle custom-tittle">{{ titulo }}</h2>
+            </div>
+          </div>
+          {% else %}
+          <p>No hay datos disponibles</p>
+          {% endif %}
+
+          <!-- descripcion de la rifa -->
+          {% if descripcion %}
+          <div class="content-descrip">
+            <div class="elementor-widget-descrip">
+              <h2 class="elementor-heading-descrip  custom-descrip">{{ descripcion }}</h2>
+            </div>
+          </div>
+          {% else %}
+          <p>No hay datos disponibles</p>
+          {% endif %}
+
+
+          <!-- Imagenes de promocion -->
+          <div class="site-branding">
+            <span class="site-img-Principal">
+              <img width="700" height="600" src="{{imagen_url}}" class="custom-img-Principal">
+            </span>
+          </div>
+
+
+
+          <!-- barra de progreso de ventas -->
+          <div class="barra-progres">
         
           </div>
-      
-        
-          <!-- seccion de promociones -->
+
+
+          <!-- cartas comprar promocion -->
           <div class="sections">
-            <!-- se relaiza la toma de los valores desde de la tabla ValoresPorCantidad
-                realizando automaticamente la cantidad de tarjetas requeridas -->
+            {% if valores %}
             {% for valor in valores %}
             <div class="card">
               <h2>x{{ valor.cantidad }}</h2>
               <p>${{ valor.precio }}</p>
               <p>Pesos colombianos</p>
-              <button class="comprar-button">Comprar</button>
+              <button class="cart-button">Comprar</button>
             </div>
             {% endfor %}
+            {% else %}
+            <p>No hay datos disponibles</p>
+            {% endif %}
           </div>
-        
         
           <!-- otras opciones de compra -->
           <div class="dialog">
             <input type="number" value="2">
             <button class="cart-button">Agregar al carrito</button>
           </div>
-
-
-        </main> 
+          <!-- article post-1 -->
+        </main>
+        <!-- site-main -->
       </div>
+      <!-- content-area-primary -->
     </div>
+    <!-- site-content -->
   </div>
   <!-- feet site -->
 
