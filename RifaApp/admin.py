@@ -4,4 +4,4 @@ from .models import *
 # se suben las tablas a mostrar en el administrador de Django
 admin.site.register(ValoresPorCantidad)
 admin.site.register(Rifa)
-admin.site.register(ImagenesRifa)
+admin.site.register(Imagen)
