@@ -7,6 +7,8 @@ class Rifa(models.Model):
     rango_numeros = models.IntegerField(default=100)
     valor_por_numero = models.CharField(max_length=20)
 
+class logo(models.Model):
+    imagen= models.ImageField(upload_to='static/img')
 
 # se guardan las imagenes a mostrar en la pagina 
 class Imagen(models.Model):
