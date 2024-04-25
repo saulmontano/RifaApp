@@ -1,0 +1,142 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- boton flotante del carrito de compras  -->
+<a href="{% url 'carrito' %}" class="btn-wsp">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="25"
+    height="25"
+    fill="currentColor"
+    class="bi bi-cart3"
+    viewBox="0 0 16 16"
+  >
+    <path
+      d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+    />
+  </svg>
+</a>
+
+<div class="site-content">
+  <div class="content-area-primary">
+    <main class="site-main" id="main">
+      <!-- titulo de la rifa -->
+      {% if titulo %}
+      <div class="content-tittle">
+        <div class="elementor-widget-tittle">
+          <h2 class="elementor-heading-tittle custom-tittle">{{ titulo }}</h2>
+        </div>
+      </div>
+      {% else %}
+      <p>No hay datos disponibles</p>
+      {% endif %}
+
+      <!-- descripcion de la rifa -->
+      {% if descripcion %}
+      <div class="content-descrip">
+        <div class="elementor-widget-descrip">
+          <h2 class="elementor-heading-descrip custom-descrip">
+            {{ descripcion }}
+          </h2>
+        </div>
+      </div>
+      {% else %}
+      <p>No hay datos disponibles</p>
+      {% endif %}
+      <br /><br /><br />
+
+      <!--numero ganador anterior-->
+      <div class="tarjeta-flotante">
+        <h2>Ganador del Sorteo Anterior</h2>
+        <p class="num">{{sorteo_anterior.numero_ganador }}</p>
+        <h2>Fecha del sorteo:</h2>
+        <h6>{{ sorteo_anterior.fecha_sorteo }}</h6>
+      </div>
+
+      <!-- Imagen principal -->
+      <div class="site-branding">
+        <span class="site-img-Principal">
+          <img
+            width="700"
+            height="900"
+            src="{{ imagen_principal_url }}"
+            class="imgP"
+          />
+        </span>
+      </div>
+
+      <!-- scroll de imagenes  -->
+      <div class="slide hi-slide">
+        <dvi class="hi-prev"></dvi>
+        <dvi class="hi-next"></dvi>
+        <ul>
+          {% for imagen in imagenes_scroll %}
+          <li><img src="{{ imagen.imagen.url }}" alt="" /></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Valor por numero -->
+      {% if valor_por_numero %}
+      <div class="content-valor">
+        <div class="container-separar"></div>
+        <div class="elementor-valor">
+          <h2 class="heading-valor custom-text">
+            Valor $ {{ valor_por_numero }} COP
+          </h2>
+        </div>
+      </div>
+      {% else %}
+      <p>No hay datos disponibles</p>
+      {% endif %}
+
+      <!-- cartas comprar promocion -->
+      <div class="sections">
+        {% if valores %} {% for valor in valores %}
+        <div class="card">
+          <h2>x{{ valor.cantidad }}</h2>
+          <p>${{ valor.precio }}</p>
+          <p>Pesos colombianos</p>
+          <button class="cart-button">Comprar</button>
+        </div>
+        {% endfor %} {% else %}
+        <p>No hay datos disponibles</p>
+        {% endif %}
+      </div>
+
+      <!-- barra de progreso -->
+      <div class="contenedor">
+        <div class="interno">
+          <div class="titulo">
+            <h2>¡Cantidades limitadas!</h2>
+          </div>
+          <div class="progreso">
+            <div
+              class="envoltura"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="180"
+              aria-valuenow="91.64"
+            >
+              <div class="barra" style="width: 91.64%">
+                <span class="texto"></span>
+                <span class="porcentaje">91.64%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- otras opciones de compra -->
+      <div class="dialog">
+        <input type="number" value="2" min="2" />
+        <button class="cart-button">Agregar al carrito</button>
+      </div>
+
+      <br /><br /><br /><br />
+    </main>
+    <!-- site-main -->
+  </div>
+  <!-- content-area-primary -->
+</div>
+
+{% endblock %}
