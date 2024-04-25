@@ -14,11 +14,11 @@ body {
     line-height: 63px;
     bottom:25px;
     right:25px;
-    background:#25d366;
+    background:#0d2033;
     color:#FFF;
     border-radius:50px;
     text-align:center;
-    font-size:35px;
+    font-size:25px;
     box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
     z-index:100;
     transition: all 300ms ease;
@@ -28,7 +28,7 @@ body {
 }
 .btn-wsp:hover{
     background: #FFF;
-    color: #26c061;
+    color: #0d2033;
 }
 @media only screen and (min-width:320px) and (max-width:768px){
     .btn-wsp{
@@ -40,7 +40,7 @@ body {
 
 
 /* nav principal */
-.site-header {
+.site-header{
     background-color: #0d2033;
     width: 100%;
     height: 180px;
@@ -48,24 +48,6 @@ body {
     align-items: center;
     color: white;
     position: relative;
-}
-.header-left,
-.header-right {
-    width: 33.33%; /* Dividir el espacio en tres partes iguales */
-    display: flex;
-    align-items: center;
-}
-.header-left {
-    justify-content: flex-start; /* Alinear el carrito a la izquierda */
-    padding-left: 20px; /* Añadir espacio entre el borde izquierdo y el carrito */
-}
-.header-center {
-    width: 33.33%; /* Dividir el espacio en tres partes iguales */
-    display: flex;
-    justify-content: center; /* Centrar el contenido */
-}
-.header-right {
-    width: 33.33%; /* Dividir el espacio en tres partes iguales */
 }
 
 
@@ -92,6 +74,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 /* texto del titulo */
 .custom-tittle {
     color: rgba(0, 0, 0, 0.575);
@@ -211,7 +194,6 @@ body {
     border: 3px solid white;
     cursor: pointer;
     background-color: #333;
-
 }
 .hi-slide > ul > li > img{
     width: 100%;
@@ -220,10 +202,8 @@ body {
 }
 
 
-/* Estilos generales */
-
+/* Estilos Barra progreso */
 .progreso {
-
     text-align: left;
     display: flex;
     align-items: center;
@@ -242,7 +222,6 @@ body {
     height: 100%;
     border-radius: 2px;
 }
-
 .barra {
     display: flex;
     justify-content: space-between;
@@ -255,53 +234,43 @@ body {
     transition: width 1s ease-in-out;
     overflow: hidden;
 }
-
 .texto {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     padding-left: 15px;
 }
-
 .porcentaje {
     padding-right: 15px;
 }
+
 
 /* Clases de estado */
 .envoltura.informacion .barra {
     background-color: #5bc0de;
 }
-
 .envoltura.exito .barra {
     background-color: #5cb85c;
 }
-
 .envoltura.advertencia .barra {
     background-color: #f8ad4e;
 }
-
 .envoltura.peligro .barra {
     background-color: #d9534f;
 }
-
 .titulo {
     display: flex;
     justify-content: center;
 }
-
 @media (max-width: 767px) {
     .texto {
         padding-left: 10px;
     }
 }
-
 .interno .envoltura,
 .envoltura {
     height: auto;
 }
-
-
-
 
 
 
@@ -378,7 +347,7 @@ body {
 
 
 
-/*:::::Pie de Pagina*/
+/*Pie de Pagina*/
 .pie-pagina{
     width: 100%;
     background-color: #0a141d;
