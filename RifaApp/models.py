@@ -26,3 +26,10 @@ class ValoresPorCantidad(models.Model):
 
     def __str__(self):
         return self.cantidad
+    
+class SorteoAnterior(models.Model):
+    numero_ganador = models.IntegerField(max_length=100)
+    fecha_sorteo = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+       return f"Sorteo anterior: {self.numero_ganador} ({self.fecha_sorteo})"
