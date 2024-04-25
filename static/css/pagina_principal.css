@@ -5,6 +5,28 @@ body {
     margin: 0;
     padding: 0;
 }
+/* tarjeta flotante de numero ganador */
+.tarjeta-flotante {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 200px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .tarjeta-flotante h2 {
+    color: goldenrod; /* color dorado */
+    font-size: 18px; /* tamaño de fuente más grande */
+    font-weight: bold; /* negrita */
+}
+
+.tarjeta-flotante p{
+    font-size: 30px;
+    font-weight: bold; /* negrita */
+    color: black; /* color negro */
+}
 
 /* boton flotante de whatsapp */
 .btn-wsp{

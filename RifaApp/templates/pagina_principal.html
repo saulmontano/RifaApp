@@ -82,12 +82,12 @@
             <br /><br /><br />
             
             <!--numero ganador anterior-->
-            <h2>Número Ganador del Sorteo Anterior</h2>
-            <p>
-              El número ganador del sorteo anterior es:
-              {{sorteo_anterior.numero_ganador }}
-            </p>
-            <p>Fecha del sorteo: {{ sorteo_anterior.fecha_sorteo }}</p>
+            <div class="tarjeta-flotante">
+              <h2>Ganador del Sorteo Anterior</h2>
+              <p class="num">{{sorteo_anterior.numero_ganador }}</p>
+              <h2>Fecha del sorteo:</h2>
+              <h6>{{ sorteo_anterior.fecha_sorteo }}</h6>
+            </div>
 
             <!-- Imagen principal -->
             <div class="site-branding">
