@@ -7,8 +7,6 @@ class Rifa(models.Model):
     rango_numeros = models.IntegerField(default=100)
     valor_por_numero = models.CharField(max_length=20)
 
-class logo(models.Model):
-    imagen= models.ImageField(upload_to='static/img')
 
 # se guardan las imagenes a mostrar en la pagina 
 class Imagen(models.Model):
@@ -26,9 +24,9 @@ class ValoresPorCantidad(models.Model):
 
     def __str__(self):
         return self.cantidad
-    
+
 class SorteoAnterior(models.Model):
-    numero_ganador = models.IntegerField(max_length=100)
+    numero_ganador = models.IntegerField()
     fecha_sorteo = models.DateField(auto_now_add=True)
 
     def __str__(self):
