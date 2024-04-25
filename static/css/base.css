@@ -6,7 +6,7 @@
         padding: 0;
     }
 
-
+    /* imagen logo */
     .site-header {
         background-color: #0d2033;
         width: 100%;
@@ -30,8 +30,8 @@
     /* tarjeta flotante de numero ganador */
     .tarjeta-flotante {
         position: fixed;
-        bottom: 90px;
-        right: 20px;
+        bottom: 250px;
+        right: 10px;
         width: 200px;
         padding: 10px;
         background-color: white;
