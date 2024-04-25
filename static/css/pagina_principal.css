@@ -39,22 +39,35 @@ body {
 }
 
 
-
-
 /* nav principal */
-.feet-site{
-    background-color: white;
-}
 .site-header {
     background-color: #0d2033;
-    width: 100%; /* Ancho*/ 
-    height:180px; /*alto */
+    width: 100%;
+    height: 180px;
     display: flex;
-    justify-content: center;
-    align-items: center; /* Centra verticalmente */
+    align-items: center;
     color: white;
     position: relative;
 }
+.header-left,
+.header-right {
+    width: 33.33%; /* Dividir el espacio en tres partes iguales */
+    display: flex;
+    align-items: center;
+}
+.header-left {
+    justify-content: flex-start; /* Alinear el carrito a la izquierda */
+    padding-left: 20px; /* Añadir espacio entre el borde izquierdo y el carrito */
+}
+.header-center {
+    width: 33.33%; /* Dividir el espacio en tres partes iguales */
+    display: flex;
+    justify-content: center; /* Centrar el contenido */
+}
+.header-right {
+    width: 33.33%; /* Dividir el espacio en tres partes iguales */
+}
+
 
 /* titulo de la rifa */
 .content-tittle{
@@ -110,8 +123,8 @@ body {
 
 /* imagen principal */
 .site-branding{
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 300%;
     display: flex;
     justify-content: center;
 }
