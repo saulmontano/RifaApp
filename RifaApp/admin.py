@@ -6,3 +6,6 @@ admin.site.register(ValoresPorCantidad)
 admin.site.register(Rifa)
 admin.site.register(Imagen)
 admin.site.register(SorteoAnterior)
+
+
+
